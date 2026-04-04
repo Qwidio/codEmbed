@@ -1,7 +1,7 @@
 * {
-    font-family: Consolas, 'Courier New', monospace;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     text-decoration: none;
-    font-size: 16px;
+    font-size: calc(10px + 0.4vw + 0.4vh);
     font-weight: 500;
     margin: 0;
     padding: 0;
@@ -41,6 +41,7 @@ html {
 body {
     margin: 0 auto;
     width: 100%;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -75,6 +76,9 @@ code {
 }
 p code {
     color: #ffffff;
+}
+.pre-line {
+    white-space: pre-line;
 }
 
 /* input (these rarely need customizing)*/
@@ -441,58 +445,6 @@ span {
 
 
 /* uni size */
-.wh100 {
-    width: 100vw;
-    height: 100vh;
-}
-.wh100p {
-    width: 100%;
-    height: 100%;
-}
-.wh50 {
-    width: 50vw;
-    height: 50vh;
-}
-.wh50p {
-    width: 50%;
-    height: 50%;
-}
-.w10 {
-    width: 10vw;
-}
-.w10p {
-    width: 10%;
-}
-.w20 {
-    width: 20vw;
-}
-.w20p {
-    width: 20%;
-}
-.w30 {
-    width: 30vw;
-}
-.w30p {
-    width: 30%;
-}
-.w33 {
-    width: 33vw;
-}
-.w33p {
-    width: 33%;
-}
-.w40 {
-    width: 40vw;
-}
-.w40p {
-    width: 40%;
-}
-.w49 {
-    width: 49vw;
-}
-.w49p {
-    width: 49%;
-}
 .w50 {
     width: 50vw;
 }
@@ -862,25 +814,25 @@ span {
     text-align: right;
 }
 .txt-ms {
-    font-size: 11px;
+    font-size: calc(6px + 0.4vw + 0.4vh);
 }
 .txt-s {
-    font-size: 14px;
+    font-size: calc(8px + 0.4vw + 0.4vh);
 }
 .txt-n {
-    font-size: 18px;
+    font-size: calc(15px + 0.4vw + 0.4vh);
 }
 .txt-b {
-    font-size: 20px;
+    font-size: calc(18px + 0.4vw + 0.4vh);
 }
 .txt-l {
-    font-size: 25px;
+    font-size: calc(22px + 0.4vw + 0.4vh);
 }
 .txt-30 {
-    font-size: 30px;
+    font-size: calc(26px + 0.4vw + 0.4vh);
 }
 .txt-maintext {
-    font-size: calc(40px + 0.5vw + 0.5vh);
+    font-size: calc(40px + 0.4vw + 0.4vh);
 }
 
 /* uni icon */
@@ -921,35 +873,6 @@ span {
 .border-3 {
     border: 1px solid rgb(49, 0, 128);
 }
-.border-custom-1 {
-    border: 40px solid transparent;
-    border-image: url(../img/borderpurple.png) 72 repeat;
-}
-.border-custom-l {
-    border-left: 40px solid transparent;
-    border-image: url(../img/borderpurple.png) 72 repeat;
-}
-.border-custom-r {
-    border-right: 40px solid transparent;
-    border-image: url(../img/borderpurple.png) 72 repeat;
-}
-.border-custom-t {
-    border-top: 40px solid transparent;
-    border-image: url(../img/borderpurple.png) 72 repeat;
-}
-.border-custom-b {
-    border-bottom: 40px solid transparent;
-    border-image: url(../img/borderpurple.png) 72 repeat;
-}
-.border-custom-l-s {
-    border-left: 20px solid transparent;
-    border-image: url(../img/borderpurple.png) 72 repeat;
-}
-.border-custom-r-s {
-    border-right: 20px solid transparent;
-    border-image: url(../img/borderpurple.png) 72 repeat;
-}
-
 .border-r {
     border-right: 1px solid rgb(164, 164, 164);
 }
@@ -1011,49 +934,11 @@ span {
 }
 
 /* hovers */
-.red-hover:hover {
-    background: red;
+.hover-opac1:hover {
+    opacity: 1;
     cursor: pointer;
 }
 
-.hover-white:hover {
-    background-color: rgba(255, 255, 255, 0.249);
-    cursor: pointer;
-}
-
-.hover-special-toright:hover {
-    transition: all ease-in-out 0.2s;
-    background-color: rgb(102, 46, 231);
-    cursor: pointer;
-}
-.hover-special-toright:active {
-    transition: all ease-in-out 0.2s;
-    background-color: rgb(102, 46, 231);
-    cursor: pointer;
-}
-
-.hover-enlarge:hover {
-    transition: all ease-in-out 0.2s;
-    transform: scale(105%);
-}
-
-.hover-text-white:hover {
-    color: rgb(255, 255, 255);
-    cursor: pointer;
-}
-.hover-text-blue:hover {
-    color: rgb(0, 132, 255);
-    cursor: pointer;
-}
-
-.border-hover-white:hover {
-    border: 1px solid var(--borderB);
-}
-
-
-.trs1s {
-    transition: all 1s;
-}
 .trs500ms {
     transition: all 0.5s;
 }
@@ -1196,8 +1081,8 @@ span {
     width: max-content;
     height: max-content;
     max-width: 60%;
-    background: var(--lightpurples);
-    border-radius: 7px;
+    background: white;
+    border-radius: 3px;
     display: flex;
     flex-direction: column;
     transition: all 0.4s;
@@ -1212,7 +1097,7 @@ span {
     width: 100%;
     height: 100%;
     font-size: 17px;
-    color: #ffffff;
+    color: black;
     text-align: left;
 }
 
@@ -1222,7 +1107,7 @@ span {
     left: 0;
     height: 4px;
     width: 100%;
-    background-color: var(--lightpurples);
+    background-color: #474747;
     overflow: hidden;
 }
 #borderanimate::before {
@@ -1232,7 +1117,7 @@ span {
     right: 0;
     height: 100%;
     width: 100%;
-    background-color: var(--purples);
+    background-color: #c9c9c9;
     animation: ReverseTimer 4.8s linear forwards;
 }
 @keyframes ReverseTimer {
@@ -1281,4 +1166,10 @@ footer {
     margin: auto;
     height: 100%;
     text-align: center;
+}
+
+@media only screen and (orientation: portrait) {
+    .mobileW95 {
+        width: 95vw;
+    } 
 }

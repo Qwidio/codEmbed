@@ -29,5 +29,28 @@ function copy(id) {
   copyText.select();
   copyText.setSelectionRange(0, 99999);
   navigator.clipboard.writeText(copyText.value);
-  alerter("Copied to clipboard");
+  alerter("Code copied to clipboard");
 } 
+function share(shareCode) {
+  navigator.clipboard.writeText(shareCode);
+  alerter("Link copied to clipboard");
+} 
+document.addEventListener("DOMContentLoaded", function() {
+    const borderAnimate = document.getElementById('borderanimate');
+    setTimeout(() => {
+        borderAnimate.style.animation = 'none';
+        void borderAnimate.offsetWidth;
+        borderAnimate.style.animation = 'ReverseTimer';
+    }, 100);
+});
+function alerter(content) {
+    const alertcard = document.getElementById('alertcard');
+    const alertcontent = document.getElementById('alertcontent');
+    alertcontent.textContent = content;
+    setTimeout(() => {
+        alertcard.style.transform = "translateX(0)";
+    }, 100);
+    setTimeout(() => {
+        alertcard.style.transform = "translateX(100vw)";
+    }, 5000);
+};

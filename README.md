@@ -1,2 +1,2 @@
 #codEmbed
-simple code sharing snippet that can be embeded anywhere
+simple code sharer that can be embeded anywhere
