@@ -25,15 +25,19 @@ function SetDialog(reqstate) {
 };
 
 function copy(id) {
-  var copyText = document.getElementById(id);
+  var copyText = document.getElementById('snippets');
   copyText.select();
   copyText.setSelectionRange(0, 99999);
   navigator.clipboard.writeText(copyText.value);
   alerter("Code copied to clipboard");
 } 
 function share(shareCode) {
-  navigator.clipboard.writeText(shareCode);
-  alerter("Link copied to clipboard");
+  var copyText = document.getElementById('snippets');
+  copyText.select();
+  copyText.setSelectionRange(0, 99999);
+  embedCode = `<iframe src="` + shareCode + `" style="width:100%; height:100%;" frameborder="0"></iframe>`
+  navigator.clipboard.writeText(embedCode);
+  alerter("Embedder copied to clipboard");
 } 
 document.addEventListener("DOMContentLoaded", function() {
     const borderAnimate = document.getElementById('borderanimate');

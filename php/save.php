@@ -16,16 +16,19 @@ if (isset($_POST['submit'])) {
         $m = $m + 1;
         $d = 15;
     }
-    if ($m < 10) {
-        $m = "0" . $m;
-    }
-    $expdate = $d . "-" . $m . "-" . $y;
+    $expdate = $d . "/" . $m . "/" . $y;
     $rnum = random_int(1000000, 989798979);
     $rword = getRandomWord();
     $ids = $rnum.$rword.$d.$m.$y;
     $title = $_POST['title'];
     $codes = $_POST['snippets'];
     $codes = htmlspecialchars($codes, ENT_QUOTES, 'UTF-8');
+    $codes = str_replace("{","<br-c>{</br-c>",$codes);
+    $codes = str_replace("}","<br-c>}</br-c>",$codes);
+    $codes = str_replace("(","<br-b>(</br-b>",$codes);
+    $codes = str_replace(")","<br-b>)</br-b>",$codes);
+    $codes = str_replace("[","<br-p>[</br-p>",$codes);
+    $codes = str_replace("]","<br-p>]</br-p>",$codes);
     $stmt_post = $connects->prepare("INSERT INTO shares (ids, title, parsekeys, code, expiration) VALUES (?, ?, MD5(?), ?, ?)");
     $stmt_post->bind_param("sssss", $ids, $title, $ids, $codes, $expdate);
     if($stmt_post->execute()){

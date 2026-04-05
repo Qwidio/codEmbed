@@ -123,12 +123,6 @@ section {
 a {
     transition: all 0.3s;
 }
-span {
-    font-size: inherit;
-    background: var(--lightpurples);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
 
 /* bg */
 .bg-def-1 {
@@ -1172,4 +1166,24 @@ footer {
     .mobileW95 {
         width: 95vw;
     } 
+}
+
+/* custom coloring tag */
+br-c {
+    font-size: inherit;
+    background: yellow;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+br-b {
+    font-size: inherit;
+    background: rgb(0, 153, 255);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+br-p {
+    font-size: inherit;
+    background: rgb(137, 12, 253);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
